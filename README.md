@@ -72,8 +72,19 @@ values ('julia', 'juliademachado@', '1234'),
 
 #fazer o insert do equipamento primeiro antes de fazer o insert da movimentação
 
+insert into equipamento (nome, marca, modelo, quantidade, estoque_minimo, categoria_id )
+values('Notebook', 'Dell', 'Inspiron 15', 10, 1, 1),
+('Monitor', 'Samsung', 'T350', 15, 2, 2),
+('Teclado', 'Logitech', 'K120', 20, 3, 3);
+
 insert into Movimentacao (tipo, data, quantidade, equipamento_id, usuario_id)
-values('Entrada','2024-08-01', '12', 1, 1),
-('Saída','2025-07-02','13', 2, 2),
-('Saída', '2026-06-03','14', 3, 3);
+values('Entrada','2024-08-01', '12', 4, 1),
+('Saída','2025-07-02','13', 5, 2),
+('Saída', '2026-06-03','14', 6, 3);
+
+INSERT INTO categoria (nome)
+VALUES
+('Informática'),
+('Periféricos'),
+('Eletrônicos');
 
