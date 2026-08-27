@@ -1032,7 +1032,188 @@ pauta_id
 ```
 
 ---
+# Criando o Service
 
+O **Service** é responsável por concentrar as **regras de negócio** da aplicação.
+
+Ele fica entre o `Controller` e o `Repository`:
+
+```text
+Controller
+    ↓
+Service
+    ↓
+Repository
+    ↓
+Banco de dados
+```
+
+## 1. Criar o pacote `service`
+
+Dentro do pacote principal do projeto, crie um novo pacote chamado:
+
+```text
+service
+```
+
+Depois, dentro dele, crie a classe:
+
+```text
+ProdutoService.java
+```
+
+A estrutura ficará:
+
+```text
+src/main/java/br/com/exemplo/rentalapi
+│
+├── controller
+├── model
+├── repository
+├── service
+│   └── ProdutoService.java
+└── configs
+```
+
+## 1. Criar o `ProdutoService`
+
+Dentro de `ProdutoService.java`, coloque:
+
+```java
+package br.com.exemplo.rentalapi.service;
+
+import br.com.exemplo.rentalapi.model.Produto;
+import br.com.exemplo.rentalapi.repository.ProdutoRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ProdutoService {
+
+    private final ProdutoRepository repository;
+
+    public ProdutoService(ProdutoRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<Produto> listar() {
+        return repository.findAll();
+    }
+
+    public Produto buscar(Long id) {
+        return repository.findById(id).orElse(null);
+    }
+
+    public Produto cadastrar(Produto produto) {
+        return repository.save(produto);
+    }
+
+    public Produto alterar(Long id, Produto produto) {
+        produto.setId(id);
+        return repository.save(produto);
+    }
+
+    public void excluir(Long id) {
+        repository.deleteById(id);
+    }
+}
+```
+
+## 3. Entendendo o código
+
+### `@Service`
+
+```java
+@Service
+```
+
+Indica ao Spring que essa classe é um **Service** e contém regras de negócio.
+
+### Repository
+
+```java
+private final ProdutoRepository repository;
+```
+
+O Service utiliza o `ProdutoRepository` para acessar os dados armazenados no banco.
+
+### Construtor
+
+```java
+public ProdutoService(ProdutoRepository repository) {
+    this.repository = repository;
+}
+```
+
+O Spring fornece automaticamente o `ProdutoRepository` para o Service.
+
+## 4. Métodos do Service
+
+### Listar produtos
+
+```java
+public List<Produto> listar() {
+    return repository.findAll();
+}
+```
+
+Busca todos os produtos cadastrados.
+
+### Buscar produto por ID
+
+```java
+public Produto buscar(Long id) {
+    return repository.findById(id).orElse(null);
+}
+```
+
+Busca um produto específico pelo seu ID.
+
+### Cadastrar produto
+
+```java
+public Produto cadastrar(Produto produto) {
+    return repository.save(produto);
+}
+```
+
+Salva um novo produto no banco de dados.
+
+### Alterar produto
+
+```java
+public Produto alterar(Long id, Produto produto) {
+    produto.setId(id);
+    return repository.save(produto);
+}
+```
+
+Atualiza os dados de um produto existente.
+
+### Excluir produto
+
+```java
+public void excluir(Long id) {
+    repository.deleteById(id);
+}
+```
+
+Exclui um produto pelo seu ID.
+
+## 5. Fluxo da API
+
+```text
+Controller
+    ↓
+ProdutoService
+    ↓
+ProdutoRepository
+    ↓
+PostgreSQL
+```
+
+O **Controller** recebe a requisição, o **Service** executa as regras da aplicação e o **Repository** realiza a operação no banco de dados.
 # 5. Criar o Repository
 
 Depois dos Models, crie uma pasta chamada:
