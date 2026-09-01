@@ -1673,77 +1673,159 @@ Execute
 <html lang="pt-BR">
 
 <head>
-
-    <!-- Configuração dos caracteres -->
     <meta charset="UTF-8">
-
-    <!-- Ajusta a página para celular e computador -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título da página -->
-    <title>Rental DB</title>
+    <title>Rental Equipment</title>
 
-    <!-- Conexão com o arquivo CSS -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== PÁGINA ===== */
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+
+        /* ===== CABEÇALHO ===== */
+
+        header {
+            background-color: rgb(224, 138, 224);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-style: italic;
+        }
+
+
+        /* ===== MENU ===== */
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+
+        /* ===== CONTEÚDO ===== */
+
+        main {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        /* ===== CAMPO DE PESQUISA ===== */
+
+        input {
+            padding: 8px;
+            width: 300px;
+        }
+
+
+        /* ===== BOTÃO ===== */
+
+        button {
+            margin: 8px;
+            padding: 8px;
+            background-color: rgb(197, 130, 218);
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+        }
+
+
+        /* ===== RODAPÉ ===== */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(224, 138, 224);
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- CABEÇALHO -->
+
     <header>
 
-        <h1>Rental DB</h1>
+        <h1>RTE</h1>
 
-        <p>Gerenciamento de equipamentos</p>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
 
     </header>
 
-    <!-- Conteúdo principal -->
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
     <main>
 
-        <h2>Equipamentos</h2>
+        <section>
+            <h2>Bem-vindo!</h2>
 
-        <!-- Botão -->
-        <button onclick="cadastrarEquipamento()">
-            + Cadastrar equipamento
-        </button>
+            <p>
+                Encontre o material ideal para você!
+            </p>
+        </section>
 
-        <!-- Lista de equipamentos -->
-        <section class="equipamentos">
 
-            <!-- Card do equipamento -->
-            <div class="card">
+        <section>
+            <h2>Sobre o site</h2>
 
-                <h3>Notebook</h3>
+            <p>
+                Este site é destinado a monitorar e achar seu material ideal!
+            </p>
+        </section>
 
-                <p>Marca: Dell</p>
 
-                <p>Modelo: Inspiron 15</p>
+        <!-- PESQUISA -->
 
-                <strong>Quantidade: 10</strong>
+        <section>
 
-            </div>
+            <h2>Pesquisar material</h2>
 
-            <!-- Outro equipamento -->
-            <div class="card">
+            <input
+                type="text"
+                placeholder="Digite o material que deseja procurar"
+            >
 
-                <h3>Monitor</h3>
-
-                <p>Marca: Samsung</p>
-
-                <p>Modelo: T350</p>
-
-                <strong>Quantidade: 15</strong>
-
-            </div>
+            <button>
+                Pesquisar
+            </button>
 
         </section>
 
     </main>
 
-    <!-- Conexão com o JavaScript -->
-    <script src="script.js"></script>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>&copy; 2026</p>
+
+        <p>Seu material está aqui!!</p>
+
+    </footer>
 
 </body>
 
