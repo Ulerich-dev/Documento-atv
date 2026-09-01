@@ -1679,16 +1679,12 @@ Execute
     <title>Rental Equipment</title>
 
     <style>
-        /* ===== PÁGINA ===== */
 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f4f4f4;
         }
-
-
-        /* ===== CABEÇALHO ===== */
 
         header {
             background-color: rgb(224, 138, 224);
@@ -1702,17 +1698,11 @@ Execute
             font-style: italic;
         }
 
-
-        /* ===== MENU ===== */
-
         nav a {
             color: white;
             text-decoration: none;
             margin: 10px;
         }
-
-
-        /* ===== CONTEÚDO ===== */
 
         main {
             padding: 30px;
@@ -1725,18 +1715,10 @@ Execute
             padding: 20px;
             margin-bottom: 20px;
         }
-
-
-        /* ===== CAMPO DE PESQUISA ===== */
-
         input {
             padding: 8px;
             width: 300px;
         }
-
-
-        /* ===== BOTÃO ===== */
-
         button {
             margin: 8px;
             padding: 8px;
@@ -1747,7 +1729,7 @@ Execute
         }
 
 
-        /* ===== RODAPÉ ===== */
+    
 
         footer {
             text-align: center;
@@ -1759,9 +1741,6 @@ Execute
 </head>
 
 <body>
-
-    <!-- CABEÇALHO -->
-
     <header>
 
         <h1>RTE</h1>
@@ -1773,10 +1752,6 @@ Execute
         </nav>
 
     </header>
-
-
-    <!-- CONTEÚDO PRINCIPAL -->
-
     <main>
 
         <section>
@@ -1786,8 +1761,6 @@ Execute
                 Encontre o material ideal para você!
             </p>
         </section>
-
-
         <section>
             <h2>Sobre o site</h2>
 
@@ -1795,10 +1768,6 @@ Execute
                 Este site é destinado a monitorar e achar seu material ideal!
             </p>
         </section>
-
-
-        <!-- PESQUISA -->
-
         <section>
 
             <h2>Pesquisar material</h2>
@@ -1815,10 +1784,6 @@ Execute
         </section>
 
     </main>
-
-
-    <!-- RODAPÉ -->
-
     <footer>
 
         <p>&copy; 2026</p>
